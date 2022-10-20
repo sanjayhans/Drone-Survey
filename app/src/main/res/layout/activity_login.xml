@@ -13,6 +13,7 @@
             android:layout_height="@dimen/_0sdp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/login_root"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/app_bg"
@@ -34,47 +35,75 @@
                     android:layout_marginTop="@dimen/_50sdp"
                     android:layout_marginBottom="@dimen/_37sdp"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@+id/ed_email"
+                    app:layout_constraintBottom_toTopOf="@+id/ll_email"
                     app:layout_constraintStart_toStartOf="@id/startGuideline"
                     app:layout_constraintEnd_toEndOf="@id/endGuideline"
                     android:background="@drawable/app_logo"/>
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_email"
-                    style="@style/editText_14sp_regular"
-                    android:imeOptions="actionNext"
-                    android:inputType="textEmailAddress"
-                    android:singleLine="true"
-                    android:hint="@string/email_id"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ll_email"
+                    style="@style/TextInputStyle"
+                    android:layout_width="@dimen/_0sdp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginTop="@dimen/_50sdp"
                     android:layout_marginBottom="@dimen/_15sdp"
                     app:layout_constraintEnd_toEndOf="@id/endGuideline"
                     app:layout_constraintStart_toStartOf="@id/startGuideline"
-                    app:layout_constraintBottom_toTopOf="@+id/ed_password"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    app:layout_constraintBottom_toTopOf="@+id/ll_password"
+                    app:layout_constraintVertical_chainStyle="packed">
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_password"
-                    style="@style/editText_14sp_regular"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPassword"
-                    android:maxLength="10"
-                    android:singleLine="true"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:hint="@string/password"
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/ed_email"
+                        style="@style/editText_14sp_regular_width"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:hint="@string/email_id"
+                        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                        app:layout_constraintStart_toStartOf="@id/startGuideline"
+                        app:layout_constraintBottom_toTopOf="@+id/ed_aadhar_phone"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ll_password"
+                    style="@style/TextInputStyle"
+                    android:layout_width="@dimen/_0sdp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
                     app:layout_constraintEnd_toEndOf="@id/endGuideline"
                     app:layout_constraintStart_toStartOf="@id/startGuideline"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    app:layout_constraintVertical_chainStyle="packed">
 
-                <androidx.appcompat.widget.AppCompatTextView
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/ed_password"
+                        style="@style/editText_14sp_regular_width"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:hint="@string/password"
+                        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                        app:layout_constraintStart_toStartOf="@id/startGuideline"
+                        app:layout_constraintBottom_toTopOf="@+id/ed_aadhar_phone"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                   <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/forgotpassword"
                     style="@style/text_12sp_regular"
                     android:textStyle="bold"
+                   android:imeOptions="actionNext"
                     android:textColor="@color/colorPrimary"
                     android:layout_marginTop="@dimen/_15sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/ed_password"
-                    app:layout_constraintEnd_toEndOf="@+id/ed_password"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_password"
+                    app:layout_constraintEnd_toEndOf="@+id/ll_password"
                     android:text="@string/forgot_password"/>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -86,8 +115,8 @@
                     android:paddingBottom="@dimen/_10sdp"
                     android:text="@string/login"
                     android:textAllCaps="false"
-                    app:layout_constraintLeft_toLeftOf="@id/ed_password"
-                    app:layout_constraintRight_toRightOf="@id/ed_password"
+                    app:layout_constraintLeft_toLeftOf="@id/ll_password"
+                    app:layout_constraintRight_toRightOf="@id/ll_password"
                     app:layout_constraintTop_toBottomOf="@id/forgotpassword" />
 
                 <androidx.appcompat.widget.AppCompatTextView

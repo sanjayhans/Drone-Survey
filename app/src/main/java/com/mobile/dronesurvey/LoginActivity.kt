@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import com.mobile.dronesurvey.databinding.ActivityLoginBinding
+import com.mobile.dronesurvey.utils.KeyboardUtil
 
 class LoginActivity : AppCompatActivity() {
 
@@ -11,8 +12,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+        KeyboardUtil(this,binding.loginRoot)
 
     }
 }
