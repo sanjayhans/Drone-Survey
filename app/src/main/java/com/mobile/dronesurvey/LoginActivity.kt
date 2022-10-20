@@ -1,5 +1,6 @@
 package com.mobile.dronesurvey
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
@@ -14,6 +15,12 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         KeyboardUtil(this,binding.loginRoot)
+
+        binding.btnLogin.setOnClickListener {
+            val i = Intent(this, LocationFilterActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i)
+        }
 
     }
 }

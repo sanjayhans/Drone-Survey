@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0sdp"
+            android:padding="@dimen/_20sdp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ll_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/app_bg">
+
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    style="@style/text_16sp_regular"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/othomosaic_label"/>
+
+
+                <com.mobile.dronesurvey.utils.MaterialSpinner
+                    android:id="@+id/spn_district"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/white"
+                    android:hint="@string/select_district"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:spinnerMode="dropdown" />
+
+                    <com.mobile.dronesurvey.utils.MaterialSpinner
+                        android:id="@+id/spn_taluk"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@color/white"
+                        app:layout_constraintTop_toBottomOf="@+id/spn_district"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:hint="@string/select_taluk"
+                        app:spinnerMode="dropdown"/>
+
+                    <com.mobile.dronesurvey.utils.MaterialSpinner
+                        android:id="@+id/spn_village"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@color/white"
+                        app:layout_constraintTop_toBottomOf="@+id/spn_taluk"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:hint="@string/select_village"
+                        app:spinnerMode="dropdown"/>
+
+                    <com.mobile.dronesurvey.utils.MaterialSpinner
+                        android:id="@+id/spn_grampanchayat"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@color/white"
+                        app:layout_constraintTop_toBottomOf="@+id/spn_village"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:hint="Select Gram Panchayat"
+                        app:spinnerMode="dropdown"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ll_surveyno"
+                        style="@style/TextInputStyle"
+                        android:layout_width="@dimen/_0sdp"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/spn_grampanchayat"
+                        app:layout_constraintVertical_chainStyle="packed">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/ed_surveyno"
+                            style="@style/editText_14sp_regular_width"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:hint="@string/survey_no"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                            app:layout_constraintStart_toStartOf="@id/startGuideline"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ll_sqft"
+                        style="@style/TextInputStyle"
+                        android:layout_width="@dimen/_0sdp"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_surveyno"
+                        app:layout_constraintVertical_chainStyle="packed">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/ed_sqft"
+                            style="@style/editText_14sp_regular_width"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:hint="Area in Sq.Ft"
+                            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                            app:layout_constraintStart_toStartOf="@id/startGuideline"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_initialize"
+                    style="@style/fill_rectangle_button"
+                    android:imeOptions="actionNext"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/initialize_othomosaic"
+                    android:textAllCaps="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_sqft" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

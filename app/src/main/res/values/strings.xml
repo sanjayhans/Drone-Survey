@@ -5,4 +5,10 @@
     <string name="login">Login</string>
     <string name="forgot_password">Forgot password ?</string>
     <string name="register">Register</string>
+    <string name="othomosaic_label">Orthomosaic Creation Details</string>
+    <string name="survey_no">Survey No</string>
+    <string name="initialize_othomosaic">Initialize Othomosaic</string>
+    <string name="select_district">Select District</string>
+    <string name="select_taluk">Select Taluk</string>
+    <string name="select_village">Select Village</string>
 </resources>
