@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="theme_dialogBackgroundColor" format="color" />
+
+    <attr name="textSize" format="dimension" />
+    <attr name="textAppearance" format="dimension" />
+    <attr name="theme_lineBackgroundColor" format="color" />
+    <attr name="theme_BackgroundColor" format="color" />
+
+    <declare-styleable name="CustomTextView">
+        <attr name="typeface" format="string" />
+        <attr name="hinttypeface" format="string" />
+    </declare-styleable>
+    <declare-styleable name="FullscreenAttrs">
+        <attr name="fullscreenBackgroundColor" format="color" />
+        <attr name="fullscreenTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialSpinner">
+        <attr name="android:enabled" />
+        <attr name="android:focusable" />
+        <attr name="android:focusableInTouchMode" />
+        <attr name="android:prompt" />
+        <attr name="android:src" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:text" />
+        <attr name="android:gravity" />
+        <attr name="srcCompat" />
+        <attr name="spinnerMode" format="enum">
+            <enum name="dialog" value="0" />
+            <enum name="dropdown" value="1" />
+            <enum name="bottomsheet" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+</resources>

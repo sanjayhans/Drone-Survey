@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_bg"
+                >
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideline"
+                    style="@style/startGuideline_style"
+                    app:layout_constraintGuide_begin="@dimen/_18sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideline"
+                    style="@style/endGuideline_style"
+                    app:layout_constraintGuide_end="@dimen/_18sdp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_37sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/ed_email"
+                    app:layout_constraintStart_toStartOf="@id/startGuideline"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                    android:background="@drawable/app_logo"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_email"
+                    style="@style/editText_14sp_regular"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:hint="@string/email_id"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@id/startGuideline"
+                    app:layout_constraintBottom_toTopOf="@+id/ed_password"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_password"
+                    style="@style/editText_14sp_regular"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:hint="@string/password"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                    app:layout_constraintStart_toStartOf="@id/startGuideline"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/forgotpassword"
+                    style="@style/text_12sp_regular"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/ed_password"
+                    app:layout_constraintEnd_toEndOf="@+id/ed_password"
+                    android:text="@string/forgot_password"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    style="@style/fill_rectangle_button"
+                    android:imeOptions="actionNext"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/login"
+                    android:textAllCaps="false"
+                    app:layout_constraintLeft_toLeftOf="@id/ed_password"
+                    app:layout_constraintRight_toRightOf="@id/ed_password"
+                    app:layout_constraintTop_toBottomOf="@id/forgotpassword" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/register_label"
+                    style="@style/text_12sp_regular"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_login"
+                    app:layout_constraintEnd_toStartOf="@+id/register"
+                    android:text="Don't have an account ? "/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/register"
+                    style="@style/text_12sp_regular"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_login"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_login"
+                    android:text="@string/register"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
