@@ -1,5 +1,6 @@
 package com.mobile.dronesurvey
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mobile.dronesurvey.databinding.ActivityLocationFilterBinding
@@ -12,6 +13,12 @@ class LocationFilterActivity : AppCompatActivity() {
         binding = ActivityLocationFilterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         KeyboardUtil(this,binding.llRoot)
+
+        binding.btnInitialize.setOnClickListener {
+            val i = Intent(this, MainActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i)
+        }
 
     }
 }

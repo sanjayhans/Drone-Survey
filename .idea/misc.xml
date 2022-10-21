@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/activity_location_filter.xml" value="0.33" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/activity_login.xml" value="0.48875" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/activity_main.xml" value="0.48875" />
         <entry key="..\:/Users/Suresh/Documents/IMPORT/DroneSurvey/app/src/main/res/drawable/app_bg.xml" value="0.1245" />
         <entry key="..\:/Users/Suresh/Documents/IMPORT/DroneSurvey/app/src/main/res/drawable/button_edge.xml" value="0.1245" />
         <entry key="..\:/Users/Suresh/Documents/IMPORT/DroneSurvey/app/src/main/res/drawable/button_fillcolor.xml" value="0.1245" />
