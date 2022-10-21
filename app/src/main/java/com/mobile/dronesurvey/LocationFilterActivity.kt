@@ -14,6 +14,7 @@ class LocationFilterActivity : AppCompatActivity() {
         setContentView(binding.root)
         KeyboardUtil(this,binding.llRoot)
 
+
         binding.btnInitialize.setOnClickListener {
             val i = Intent(this, MainActivity::class.java)
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

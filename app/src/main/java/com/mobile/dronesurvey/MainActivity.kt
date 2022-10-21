@@ -1,7 +1,8 @@
 package com.mobile.dronesurvey
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
 import com.esri.arcgisruntime.geometry.Point
 import com.esri.arcgisruntime.geometry.PointCollection
@@ -13,7 +14,6 @@ import com.esri.arcgisruntime.mapping.Viewpoint
 import com.esri.arcgisruntime.mapping.view.*
 import com.esri.arcgisruntime.symbology.SimpleFillSymbol
 import com.esri.arcgisruntime.symbology.SimpleLineSymbol
-import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol
 import com.mobile.dronesurvey.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -38,40 +38,49 @@ class MainActivity : AppCompatActivity() {
 
         addGraphics()
 
+        backbutton()
+
 
     }
 
-  /*  private fun undoButtonClick() {
-        binding.undoButton.setOnClickListener {
-            if (mSketchEditor.canUndo()){
-                mSketchEditor.undo()
-            }
+    private fun backbutton() {
+        binding.backArrowLayout.title.text = resources.getString(R.string.app_name)
+        binding.backArrowLayout.backArrow.setOnClickListener {
+            finish()
         }
     }
 
-    private fun RedoButtonClick() {
-        binding.redoButton.setOnClickListener {
-            if (mSketchEditor.canRedo()){
-                mSketchEditor.redo()
-            }
-        }
-    }
-    private fun addSkechEditor() {
-         mSketchEditor = SketchEditor()
-        binding.mapView.sketchEditor = mSketchEditor
+    /*  private fun undoButtonClick() {
+          binding.undoButton.setOnClickListener {
+              if (mSketchEditor.canUndo()){
+                  mSketchEditor.undo()
+              }
+          }
+      }
 
-    }
-    private fun editButton() {
-        binding.polylineButton.setOnClickListener {
-            createModePolyLine()
-        }
-    }
+      private fun RedoButtonClick() {
+          binding.redoButton.setOnClickListener {
+              if (mSketchEditor.canRedo()){
+                  mSketchEditor.redo()
+              }
+          }
+      }
+      private fun addSkechEditor() {
+           mSketchEditor = SketchEditor()
+          binding.mapView.sketchEditor = mSketchEditor
 
-    private fun createModePolyLine() {
-        binding.polylineButton.isSelected = false
-        binding.polylineButton.isSelected = true
-        mSketchEditor.start(SketchCreationMode.POLYLINE)
-    }*/
+      }
+      private fun editButton() {
+          binding.polylineButton.setOnClickListener {
+              createModePolyLine()
+          }
+      }
+
+      private fun createModePolyLine() {
+          binding.polylineButton.isSelected = false
+          binding.polylineButton.isSelected = true
+          mSketchEditor.start(SketchCreationMode.POLYLINE)
+      }*/
 
     private fun setApiKeyForApp(){
         // set your API key
@@ -92,6 +101,8 @@ class MainActivity : AppCompatActivity() {
 
         // set the viewpoint, Viewpoint(latitude, longitude, scale)
         binding.mapView.setViewpoint(Viewpoint(34.0270, -118.8050, 72000.0))
+
+
 
        /* if(binding.mapView.map!=null){
             addSkechEditor()
@@ -129,6 +140,7 @@ class MainActivity : AppCompatActivity() {
         // create an orange fill symbol with 20% transparency and the blue simple line symbol
         val polygonFillSymbol =
             SimpleFillSymbol(SimpleFillSymbol.Style.SOLID, -0x7f00a8cd, blueOutlineSymbol)
+          //  SimpleFillSymbol(SimpleFillSymbol.Style.SOLID, resources.getColor(R.color.colorPrimary), blueOutlineSymbol)
 
 
         // create a polygon graphic from the polygon geometry and symbol
