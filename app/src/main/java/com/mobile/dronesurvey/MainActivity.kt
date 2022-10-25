@@ -18,13 +18,7 @@ import com.mobile.dronesurvey.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    /*private val activityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
 
-    private val mapView: MapView by lazy {
-        activityMainBinding.mapView
-    }*/
     private lateinit var binding: ActivityMainBinding
     private lateinit var mSketchEditor: SketchEditor
     override fun onCreate(savedInstanceState: Bundle?) {
