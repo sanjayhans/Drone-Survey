@@ -1,7 +1,6 @@
 package com.mobile.dronesurvey
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
 import com.esri.arcgisruntime.geometry.Point
@@ -10,11 +9,14 @@ import com.esri.arcgisruntime.geometry.Polygon
 import com.esri.arcgisruntime.geometry.SpatialReferences
 import com.esri.arcgisruntime.mapping.ArcGISMap
 import com.esri.arcgisruntime.mapping.BasemapStyle
-import com.esri.arcgisruntime.mapping.Viewpoint
-import com.esri.arcgisruntime.mapping.view.*
+import com.esri.arcgisruntime.mapping.view.Graphic
+import com.esri.arcgisruntime.mapping.view.GraphicsOverlay
+import com.esri.arcgisruntime.mapping.view.SketchEditor
 import com.esri.arcgisruntime.symbology.SimpleFillSymbol
 import com.esri.arcgisruntime.symbology.SimpleLineSymbol
+import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol
 import com.mobile.dronesurvey.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -89,12 +91,13 @@ class MainActivity : AppCompatActivity() {
     private fun setupMap() {
         // create a map with the BasemapStyle streets
         val map = ArcGISMap(BasemapStyle.ARCGIS_TOPOGRAPHIC)
+       // val map = ArcGISMap(BasemapStyle.ARCGIS_TERRAIN_BASE)
 
         // set the map to be displayed in the layout's MapView
         binding.mapView.map = map
 
         // set the viewpoint, Viewpoint(latitude, longitude, scale)
-        binding.mapView.setViewpoint(Viewpoint(34.0270, -118.8050, 72000.0))
+        //binding.mapView.setViewpoint(Viewpoint(77.3593152,  14.0566957, 72000.0))
 
 
        /* if(binding.mapView.map!=null){
@@ -112,17 +115,44 @@ class MainActivity : AppCompatActivity() {
     private fun addGraphics() {
 
         // create a graphics overlay and add it to the map view
-        val graphicsOverlay = GraphicsOverlay()
-        binding.mapView.graphicsOverlays.add(graphicsOverlay)
+        var graphicsOverlay = GraphicsOverlay()
+        /*binding.mapView.graphicsOverlays.add(graphicsOverlay)
+
+        graphicsOverlay = GraphicsOverlay()*/
+
+// create a map point for the Santa Monica pier
+
+// create a map point for the Santa Monica pier
+        val pierPoint = Point(77.3593152, 14.0566957, SpatialReferences.getWgs84())
+
+// create a red (0xFFFF0000) circle simple marker symbol
+
+// create a red (0xFFFF0000) circle simple marker symbol
+        val redCircleSymbol = SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, -0x10000, 10F)
+
+// create a graphic from the point and symbol
+
+// create a graphic from the point and symbol
+        val pierGraphic = Graphic(pierPoint, redCircleSymbol)
+
+// add the graphic to the graphics overlay
+
+// add the graphic to the graphics overlay
+        graphicsOverlay.graphics.add(pierGraphic)
+
+// add graphics overlay to the map view's graphics overlay collection
+
+// add graphics overlay to the map view's graphics overlay collection
+        binding.mapView.getGraphicsOverlays().add(graphicsOverlay)
+
 
         // create a point collection with a spatial reference, and add five points to it
         val polygonPoints = PointCollection(SpatialReferences.getWgs84()).apply {
             // Point(latitude, longitude)
-            add(Point(-118.8189, 34.0137))
-            add(Point(-118.8067, 34.0215))
-            add(Point(-118.7914, 34.0163))
-            add(Point(-118.7959, 34.0085))
-            add(Point(-118.8085, 34.0035))
+            add(Point(77.3591336, 14.0570376))
+            add(Point(77.3589039, 14.0565828))
+            add(Point(77.3594680, 14.0563753))
+            add(Point(77.3596617, 14.0568588))
         }
         val blueOutlineSymbol = SimpleLineSymbol(SimpleLineSymbol.Style.SOLID, -0xff9c01, 2f)
 
