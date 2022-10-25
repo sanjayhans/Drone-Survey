@@ -88,13 +88,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupMap() {
         // create a map with the BasemapStyle streets
-        val map = ArcGISMap(BasemapStyle.ARCGIS_TOPOGRAPHIC)
+        val map = ArcGISMap(BasemapStyle.ARCGIS_IMAGERY)
 
         // set the map to be displayed in the layout's MapView
         binding.mapView.map = map
 
         // set the viewpoint, Viewpoint(latitude, longitude, scale)
-        binding.mapView.setViewpoint(Viewpoint(34.0270, -118.8050, 72000.0))
+        binding.mapView.setViewpoint(Viewpoint(14.0566957, 77.3593152, 3000.0))
 
 
        /* if(binding.mapView.map!=null){
@@ -118,11 +118,10 @@ class MainActivity : AppCompatActivity() {
         // create a point collection with a spatial reference, and add five points to it
         val polygonPoints = PointCollection(SpatialReferences.getWgs84()).apply {
             // Point(latitude, longitude)
-            add(Point(-118.8189, 34.0137))
-            add(Point(-118.8067, 34.0215))
-            add(Point(-118.7914, 34.0163))
-            add(Point(-118.7959, 34.0085))
-            add(Point(-118.8085, 34.0035))
+            add(Point(77.3591336, 14.0570376))
+            add(Point(77.3589039, 14.0565828))
+            add(Point(77.3594680,14.0563753))
+            add(Point(77.3596617, 14.0568588))
         }
         val blueOutlineSymbol = SimpleLineSymbol(SimpleLineSymbol.Style.SOLID, -0xff9c01, 2f)
 
