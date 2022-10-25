@@ -97,7 +97,6 @@ class MainActivity : AppCompatActivity() {
         binding.mapView.setViewpoint(Viewpoint(34.0270, -118.8050, 72000.0))
 
 
-
        /* if(binding.mapView.map!=null){
             addSkechEditor()
 
