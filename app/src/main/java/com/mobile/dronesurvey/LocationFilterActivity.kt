@@ -24,9 +24,19 @@ class LocationFilterActivity : AppCompatActivity() {
 
 
         binding.btnInitialize.setOnClickListener {
-            val i = Intent(this, MainActivity::class.java)
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(i)
+
+            if(!binding.spnDistrict.selectedItem.toString().contains("--Select--")&&
+                !binding.spnTaluk.selectedItem.toString().contains("--Select--") &&
+                !binding.spnVillage.selectedItem.toString().contains("--Select--")&&
+                !binding.spnGrampanchayat.selectedItem.toString().contains("--Select--")&&
+                    binding.edSurveyno.text.toString().isNotEmpty()){
+                val i = Intent(this, MainActivity::class.java)
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i)
+            }else{
+                Toast.makeText(this, "Please fill the required data.", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         setUpSpinner()
