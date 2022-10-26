@@ -9,10 +9,10 @@
     <string name="filter_location">Filter Location</string>
     <string name="survey_no">Survey No</string>
     <string name="submit">Submit</string>
-    <string name="select_district">Select District</string>
-    <string name="select_taluk">Select Taluk</string>
-    <string name="select_village">Select Village</string>
-    <string name="select_gram_panchayat">Select Gram Panchayat</string>
+    <string name="select_district">District</string>
+    <string name="select_taluk">Taluk</string>
+    <string name="select_village">Village</string>
+    <string name="select_gram_panchayat">Gram Panchayat</string>
     <string name="area_in_sq_ft">Area in Sq.Ft</string>
     <string name="enter_valid_password">Enter valid Password</string>
     <string name="enter_valid_emailID">Enter valid email ID</string>
@@ -21,4 +21,53 @@
     <string name="edit">Edit</string>
     <string name="redo">Redo</string>
     <string name="undo">Undo</string>
+
+
+    <string-array name="district_array">
+        <item>--Select--</item>
+        <item>Anantapur</item>
+        <item>Chittoor</item>
+    </string-array>
+
+    <string-array name="anantapurTaluka_array">
+        <item>--Select--</item>
+        <item>Anantapur</item>
+        <item>Rayadurgam</item>
+        <item>Penukonda</item>
+    </string-array>
+
+    <string-array name="chittoorTaluka_array">
+        <item>--Select--</item>
+        <item>Bangarupalem</item>
+        <item>Kuppam</item>
+    </string-array>
+
+    <string-array name="anantapur_Village_GP_array">
+        <item>--Select--</item>
+        <item>Kudair</item>
+        <item>Raptadu</item>
+    </string-array>
+
+    <string-array name="rayadurgam_Village_GP_array">
+        <item>--Select--</item>
+        <item>Gummagatta</item>
+        <item>Hirehal</item>
+    </string-array>
+
+    <string-array name="penukonda_Village_GP_array">
+        <item>--Select--</item>
+        <item>Roddam</item>
+        <item>Somanandipalle</item>
+    </string-array>
+    <string-array name="bangarupalem_Village_GP_array">
+        <item>--Select--</item>
+        <item>Thavanampalle</item>
+        <item>Irala</item>
+    </string-array>
+    <string-array name="kuppam_Village_GP_array">
+        <item>--Select--</item>
+        <item>Santhipuram</item>
+        <item>Gudupalle</item>
+    </string-array>
+
 </resources>

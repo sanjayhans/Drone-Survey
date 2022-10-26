@@ -61,13 +61,12 @@
                         app:layout_constraintTop_toTopOf="parent"
                         android:text="@string/filter_location"/>
 
-
-                    <com.mobile.dronesurvey.utils.MaterialSpinner
+                     <com.mobile.dronesurvey.utils.MaterialSpinner
                         android:id="@+id/spn_district"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginTop="@dimen/_20sdp"
+                         android:layout_height="@dimen/_57sdp"
+                         android:layout_marginTop="@dimen/_20sdp"
                         android:background="@color/white"
                         android:hint="@string/select_district"
                         app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +76,7 @@
                     <com.mobile.dronesurvey.utils.MaterialSpinner
                         android:id="@+id/spn_taluk"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_57sdp"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:background="@color/white"
                         app:layout_constraintTop_toBottomOf="@+id/spn_district"
@@ -88,7 +87,7 @@
                     <com.mobile.dronesurvey.utils.MaterialSpinner
                         android:id="@+id/spn_village"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_57sdp"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:background="@color/white"
                         app:layout_constraintTop_toBottomOf="@+id/spn_taluk"
@@ -99,7 +98,7 @@
                     <com.mobile.dronesurvey.utils.MaterialSpinner
                         android:id="@+id/spn_grampanchayat"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_57sdp"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:background="@color/white"
                         app:layout_constraintTop_toBottomOf="@+id/spn_village"
@@ -132,7 +131,7 @@
                             />
                     </com.google.android.material.textfield.TextInputLayout>
 
-              <androidx.appcompat.widget.AppCompatButton
+                                <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_initialize"
                         style="@style/fill_rectangle_button"
                         android:imeOptions="actionNext"

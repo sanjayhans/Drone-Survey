@@ -10,6 +10,7 @@ import com.esri.arcgisruntime.geometry.Polygon
 import com.esri.arcgisruntime.geometry.SpatialReferences
 import com.esri.arcgisruntime.mapping.ArcGISMap
 import com.esri.arcgisruntime.mapping.BasemapStyle
+import com.esri.arcgisruntime.mapping.Viewpoint
 import com.esri.arcgisruntime.mapping.view.Graphic
 import com.esri.arcgisruntime.mapping.view.GraphicsOverlay
 import com.esri.arcgisruntime.mapping.view.SketchEditor
@@ -116,35 +117,7 @@ class MainActivity : AppCompatActivity() {
 
         // create a graphics overlay and add it to the map view
         var graphicsOverlay = GraphicsOverlay()
-        /*binding.mapView.graphicsOverlays.add(graphicsOverlay)
-
-        graphicsOverlay = GraphicsOverlay()*/
-
-// create a map point for the Santa Monica pier
-
-// create a map point for the Santa Monica pier
-        val pierPoint = Point(77.3593152, 14.0566957, SpatialReferences.getWgs84())
-
-// create a red (0xFFFF0000) circle simple marker symbol
-
-// create a red (0xFFFF0000) circle simple marker symbol
-        val redCircleSymbol = SimpleMarkerSymbol(SimpleMarkerSymbol.Style.CIRCLE, -0x10000, 10F)
-
-// create a graphic from the point and symbol
-
-// create a graphic from the point and symbol
-        val pierGraphic = Graphic(pierPoint, redCircleSymbol)
-
-// add the graphic to the graphics overlay
-
-// add the graphic to the graphics overlay
-        graphicsOverlay.graphics.add(pierGraphic)
-
-// add graphics overlay to the map view's graphics overlay collection
-
-// add graphics overlay to the map view's graphics overlay collection
-        binding.mapView.getGraphicsOverlays().add(graphicsOverlay)
-
+        binding.mapView.graphicsOverlays.add(graphicsOverlay)
 
         // create a point collection with a spatial reference, and add five points to it
         val polygonPoints = PointCollection(SpatialReferences.getWgs84()).apply {
