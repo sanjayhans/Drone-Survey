@@ -4,12 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/drawable/app_bg.xml" value="0.121" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/drawable/button_bar_background.xml" value="0.121" />
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/drawable/button_edge.xml" value="0.121" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/drawable/button_pressed.xml" value="0.121" />
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/drawable/ic_arrow_back_24.xml" value="0.121" />
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/activity_location_filter.xml" value="0.245" />
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/activity_login.xml" value="0.48875" />
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/activity_main.xml" value="0.48875" />
         <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/backbutton_layout.xml" value="0.48875" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/point_line_polygon_toolbar.xml" value="0.30390625" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/layout/skech_edit_location.xml" value="0.30546875" />
+        <entry key="..\:/Users/Suresh/AndroidStudioProjects/Drone-Survey/app/src/main/res/menu/undo_redo_stop_menu.xml" value="0.33" />
         <entry key="..\:/Users/Suresh/AppData/Local/Android/Sdk/platforms/android-33/data/res/layout/simple_spinner_item.xml" value="0.48875" />
         <entry key="..\:/Users/Suresh/Documents/IMPORT/DroneSurvey/app/src/main/res/drawable/app_bg.xml" value="0.1245" />
         <entry key="..\:/Users/Suresh/Documents/IMPORT/DroneSurvey/app/src/main/res/drawable/button_edge.xml" value="0.1245" />

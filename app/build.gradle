@@ -17,6 +17,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -53,39 +54,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-   /* //coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-
-    //LifeCycle
-    implementation 'androidx.lifecycle:lifecycle-common:2.5.1'
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.5.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha02"
-
-    // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
-    //For serialising JSONP add converter-scalars
-    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
-    implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-
-    // ui
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.github.bumptech.glide:glide:4.11.0'*/
-
-    /*implementation 'com.google.code.gson:gson:2.9.0'
-    implementation 'androidx.browser:browser:1.4.0'
-    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
-    implementation 'org.apache.httpcomponents.core5:httpcore5:5.0.4'
-    implementation 'org.apache.httpcomponents.core5:httpcore5-h2:5.0.4'
-    implementation 'org.slf4j:slf4j-api:1.7.32'
-    implementation 'commons-codec:commons-codec:1.15'
-    implementation 'org.conscrypt:conscrypt-openjdk-uber:2.2.1'
-    implementation 'net.spy:spymemcached:2.12.3'
-    implementation 'org.ehcache.modules:ehcache-api:3.4.0'*/
 }

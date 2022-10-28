@@ -22,6 +22,15 @@
     <string name="redo">Redo</string>
     <string name="undo">Undo</string>
 
+    <string name="pointButtonDescription">Draw new point</string>
+    <string name="polylineButtonDescription">Draw new polyline</string>
+    <string name="polygonButtonDescription">Draw new polygon</string>
+    <string name="freehandLineButtonDescription">Draw freehand line</string>
+    <string name="freehandPolyButtonDescription">Draw freehand polygon</string>
+    <string name="undoButtonDescription">Undo</string>
+    <string name="redoButtonDescription">Redo</string>
+    <string name="stopButtonDescription">Stop</string>
+
 
     <string-array name="district_array">
         <item>--Select--</item>
