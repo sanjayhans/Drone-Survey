@@ -77,9 +77,6 @@ class SkechEditLocation : AppCompatActivity() {
 
         //===========SURESH======================
         mPointButton.visibility = View.GONE
-        mMultiPointButton.visibility = View.GONE
-        mFreehandLineButton.visibility = View.GONE
-        mFreehandPolygonButton.visibility = View.GONE
         //===========SURESH======================
 
 
@@ -234,7 +231,6 @@ class SkechEditLocation : AppCompatActivity() {
                 Log.e(TAG, "spatialReference : "+graphic.geometry.spatialReference.toJson())
                 Log.e(TAG, "dimension : "+graphic.geometry.dimension)
                 //Log.e(TAG, "mFillSymbol json : "+mFillSymbol?.toJson())
-
 
 
             } else if (graphic.geometry.geometryType == GeometryType.POLYLINE) {
