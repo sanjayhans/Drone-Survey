@@ -9,7 +9,9 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
+import com.esri.arcgisruntime.data.ServiceFeatureTable
 import com.esri.arcgisruntime.geometry.*
+import com.esri.arcgisruntime.layers.FeatureLayer
 import com.esri.arcgisruntime.mapping.ArcGISMap
 import com.esri.arcgisruntime.mapping.BasemapStyle
 import com.esri.arcgisruntime.mapping.Viewpoint
@@ -34,6 +36,7 @@ class SkechEditLocation : AppCompatActivity() {
     private lateinit var mPolygonButton: ImageButton
     private lateinit var mFreehandLineButton: ImageButton
     private lateinit var mFreehandPolygonButton: ImageButton
+    private lateinit var  map: ArcGISMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +44,6 @@ class SkechEditLocation : AppCompatActivity() {
 
         // authentication with an API key or named user is required to access basemaps and other
         // location services
-       // ArcGISRuntimeEnvironment.setApiKey(BuildConfig.API_KEY)
-       // ArcGISRuntimeEnvironment.setApiKey(resources.getString(R.string.API_KEY))
         ArcGISRuntimeEnvironment.setApiKey("AAPK70cf10a3ed034554a34e08af2dca3c2bkkjTXZI_INhpTdGil7vIxN4aioK8AtJihyOsX8E2HzGKBkGMGAmq1Ih3A9Wm5HIv")
 
         // define symbols
@@ -53,19 +54,26 @@ class SkechEditLocation : AppCompatActivity() {
         // inflate map view from layout
         mMapView = findViewById(R.id.mapView)
         // create a map with the Basemap Style topographic
-       // val map = ArcGISMap(BasemapStyle.ARCGIS_LIGHT_GRAY)
-        val map = ArcGISMap(BasemapStyle.ARCGIS_IMAGERY)
+        map = ArcGISMap(BasemapStyle.ARCGIS_IMAGERY)
 
-        // set the map to be displayed in this view
-        mMapView.setMap(map)
-        mMapView.setViewpoint(Viewpoint(14.0566957, 77.3593152, 3000.0))
+        // create the service feature table
+        val serviceFeatureTable = ServiceFeatureTable("https://services7.arcgis.com/PgeIirzmbuRv6GNJ/arcgis/rest/services/FarmerBoundry4/FeatureServer/0")
+
+        // create the feature layer using the service feature table
+        val featureLayer = FeatureLayer(serviceFeatureTable)
+        map.operationalLayers.add(featureLayer)
+
+        // set the map to be displayed in the layout's MapView
+        mMapView.map = map
+        // set the viewpoint, Viewpoint(latitude, longitude, scale)
+        mMapView.setViewpoint(Viewpoint(14.0566957,77.3593152, 5000.0))
+
         mGraphicsOverlay = GraphicsOverlay()
         mMapView.getGraphicsOverlays().add(mGraphicsOverlay)
 
         // create a new sketch editor and add it to the map view
         mSketchEditor = SketchEditor()
         mMapView.setSketchEditor(mSketchEditor)
-
 
         // get buttons from layouts
         mPointButton = findViewById(R.id.pointButton)
@@ -79,7 +87,6 @@ class SkechEditLocation : AppCompatActivity() {
         mPointButton.visibility = View.GONE
         //===========SURESH======================
 
-
         // add click listeners
         mPointButton.setOnClickListener(View.OnClickListener { view: View? -> createModePoint() })
         mMultiPointButton.setOnClickListener(View.OnClickListener { view: View? -> createModeMultipoint() })
@@ -88,17 +95,25 @@ class SkechEditLocation : AppCompatActivity() {
         mFreehandLineButton.setOnClickListener(View.OnClickListener { view: View? -> createModeFreehandLine() })
         mFreehandPolygonButton.setOnClickListener(View.OnClickListener { view: View? -> createModeFreehandPolygon() })
 
-
-
         //============SURESH=============
 
+        //skechMap()
+
+       //=========SURESH=================
+
+    }
+
+
+    private fun skechMap() {
         val polygonPoints = PointCollection(SpatialReferences.getWgs84()).apply {
             // Point(latitude, longitude)
-            add(Point(77.3591336, 14.0570376))
-            add(Point(77.3589039, 14.0565828))
-            add(Point(77.3594680,14.0563753))
-            add(Point(77.3596617, 14.0568588))
+            add(Point(77.35797770502093, 15.48432))
+            add(Point(75.4931, 15.55508))
+            add(Point(75.4641,15.55238))
+            add(Point(75.4827, 15.55383))
         }
+
+
         val blueOutlineSymbol = SimpleLineSymbol(SimpleLineSymbol.Style.SOLID, -0xff9c01, 2f)
 
         // create a polygon geometry from the point collection
@@ -110,15 +125,11 @@ class SkechEditLocation : AppCompatActivity() {
         // create a polygon graphic from the polygon geometry and symbol
         val graphic = Graphic(polygon, polygonFillSymbol)
 
-           // Log.e(TAG, "Json : "+graphic.geometry.toJson())
-           // Log.e(TAG, "dimension : "+graphic.geometry.dimension)
+        // Log.e(TAG, "Json : "+graphic.geometry.toJson())
+        // Log.e(TAG, "dimension : "+graphic.geometry.dimension)
 
         // add the graphic to the graphics overlay
         mGraphicsOverlay!!.graphics.add(graphic)
-
-        //=========SURESH=================
-
-
 
     }
 

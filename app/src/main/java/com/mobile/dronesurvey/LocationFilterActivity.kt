@@ -25,7 +25,7 @@ class LocationFilterActivity : AppCompatActivity() {
 
         binding.btnInitialize.setOnClickListener {
 
-            if(!binding.spnDistrict.selectedItem.toString().contains("--Select--")&&
+           /* if(!binding.spnDistrict.selectedItem.toString().contains("--Select--")&&
                 !binding.spnTaluk.selectedItem.toString().contains("--Select--") &&
                 !binding.spnVillage.selectedItem.toString().contains("--Select--")&&
                 !binding.spnGrampanchayat.selectedItem.toString().contains("--Select--")&&
@@ -36,10 +36,10 @@ class LocationFilterActivity : AppCompatActivity() {
                 startActivity(i)
             }else{
                 Toast.makeText(this, "Please fill the required data.", Toast.LENGTH_SHORT).show()
-            }
-            /*val i = Intent(this, SkechEditLocation::class.java)
+            }*/
+            val i = Intent(this, SkechEditLocation::class.java)
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(i)*/
+            startActivity(i)
         }
 
         setUpSpinner()
@@ -58,10 +58,7 @@ class LocationFilterActivity : AppCompatActivity() {
                  }
 
             }
-
-
             binding.spnDistrict.selection = 0
-
 
     }
 
